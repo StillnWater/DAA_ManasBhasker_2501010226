@@ -1,0 +1,43 @@
+Dataset: data/small.json
+Parcels: 10 | Road graph: 12 nodes, 23 roads | Van capacity: 40 kg
+
+== Phase 2a: parcels sorted by urgency (deadline, then priority) ==
+Parcel  Dest  Wt(kg)  Prio  Deadline(h)  Value
+     8     1       1     5            1     73
+     7     2      15     3            1     53
+     3    11       7     2            4     40
+     1     3      10     1            9     25
+     4     8       1     4           14     50
+     9     7      11     2           14     30
+    10     1       9     2           15     29
+     2     2       8     4           16     48
+     6     8       5     2           19     25
+     5    10      13     1           23     11
+
+== Phase 2b: knapsack (DP) - best parcels for one trip, capacity 40 kg ==
+DP table dp[i][w] (columns = capacity in kg):
+  i     0    5   10   15   20   25   30   35   40
+  0     0    0    0    0    0    0    0    0    0
+  1     0   73   73   73   73   73   73   73   73
+  2     0   73   73   73  126  126  126  126  126
+  3     0   73  113  113  126  166  166  166  166
+  4     0   73  113  113  138  166  166  191  191
+  5     0  123  163  163  188  216  216  241  241
+  6     0  123  163  163  193  216  218  246  246
+  7     0  123  163  163  193  216  222  246  247
+  8     0  123  171  171  211  224  241  264  270
+  9     0  123  171  196  211  236  249  266  289
+ 10     0  123  171  196  211  236  249  266  289
+Selected parcels: [8, 7, 3, 4, 2, 6]
+Total weight: 37/40 kg | Total value: 289
+Left for next trip: [1, 9, 10, 5]
+
+== Phase 3: delivery route ==
+Stops to visit (graph nodes): [1, 2, 8, 11]
+Shortest distances from depot (Dijkstra): 1:11, 2:23, 8:1, 11:7
+Stop order (nearest-neighbour TSP): 0 -> 8 -> 11 -> 1 -> 2 -> 0
+Full road path: 0 -> 8 -> 10 -> 7 -> 11 -> 7 -> 10 -> 1 -> 10 -> 7 -> 2 -> 7 -> 10 -> 8 -> 0
+Total route length: 62 km
+Optimal tour (brute force): 60 km -> heuristic is 1.03x optimal
+
+Runtimes (ms): sort=0.076, knapsack=0.042, dijkstra=0.076, tsp=0.009

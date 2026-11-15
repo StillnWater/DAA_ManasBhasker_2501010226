@@ -1,0 +1,54 @@
+experiment,series,x,time_ms
+sorting,Merge sort,100,0.195
+sorting,Merge sort,500,1.2495
+sorting,Merge sort,1000,2.7495
+sorting,Merge sort,2000,3.6232
+sorting,Merge sort,4000,8.2012
+sorting,Quick sort,100,0.2745
+sorting,Quick sort,500,1.9221
+sorting,Quick sort,1000,4.3816
+sorting,Quick sort,2000,7.1179
+sorting,Quick sort,4000,20.422
+sorting,Insertion sort,100,0.3424
+sorting,Insertion sort,500,9.0313
+sorting,Insertion sort,1000,23.1854
+sorting,Insertion sort,2000,89.3875
+sorting,Insertion sort,4000,378.7244
+sorting,Python sorted(),100,0.0177
+sorting,Python sorted(),500,0.135
+sorting,Python sorted(),1000,0.1947
+sorting,Python sorted(),2000,0.422
+sorting,Python sorted(),4000,0.9727
+knapsack_n,W=100,100,0.8126
+knapsack_n,W=100,500,4.1325
+knapsack_n,W=100,1000,8.5766
+knapsack_n,W=100,2000,17.5154
+knapsack_n,W=100,4000,35.5561
+knapsack_W,n=1000,50,3.4847
+knapsack_W,n=1000,100,7.1093
+knapsack_W,n=1000,200,14.7047
+knapsack_W,n=1000,400,34.0475
+knapsack_W,n=1000,800,78.682
+dijkstra,1 source,100,0.0708
+dijkstra,1 source,500,0.4461
+dijkstra,1 source,1000,0.9797
+dijkstra,1 source,2000,2.6143
+dijkstra,1 source,4000,6.9197
+tsp,nearest_neighbor,10,0.0077
+tsp,nearest_neighbor,25,0.0328
+tsp,nearest_neighbor,50,0.1063
+tsp,nearest_neighbor,100,0.426
+tsp,nearest_neighbor,200,1.5035
+tsp,nearest_neighbor,399,7.0163
+end_to_end,sort,small,0.009
+end_to_end,knapsack,small,0.0289
+end_to_end,dijkstra,small,0.0353
+end_to_end,tsp,small,0.0035
+end_to_end,sort,medium,0.14
+end_to_end,knapsack,medium,0.6481
+end_to_end,dijkstra,medium,0.8449
+end_to_end,tsp,medium,0.036
+end_to_end,sort,large,1.7172
+end_to_end,knapsack,large,7.9737
+end_to_end,dijkstra,large,14.5915
+end_to_end,tsp,large,0.3762
